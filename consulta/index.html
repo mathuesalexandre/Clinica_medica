@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Consulta</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+     
+
+body {
+    padding-top: 56px;
+    margin-bottom: 70px; /* Altura estimada do rodapé */
+    background-image: url("../img/fundo.jpg");
+    background-size: cover;
+
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+color: #ccc;
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav{
+    background: rgb(1,43,53);
+background: linear-gradient(90deg, rgba(1,43,53,1) 0%, rgba(105,252,255,1) 41%, rgba(233,255,255,1) 85%);
+  }
+
+ 
+.nav-link {
+display: inline-block;
+position: relative;
+text-decoration: none;
+color: rgb(10, 13, 13);
+
+border-radius: 25px;
+margin-right: 10px;
+padding: 10px 20px;
+transition: color 0.3s ease, border-bottom-width 0.3s ease;
+}
+
+.nav-link:hover {
+color: #BB352B; /* Altera a cor do texto ao passar o mouse */
+}
+
+.nav-link::after {
+content: '';
+display: block;
+position: absolute;
+bottom: 0;
+left: 10%;
+width: 80%;
+height: 3px; /* Altura da barra */
+background: #BB352B; /* Cor da barra */
+transform: scaleX(0); /* Inicia com largura zero para não ser visível inicialmente */
+transform-origin: bottom right;
+transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+transform: scaleX(1); /* Aumenta a largura ao passar o mouse */
+transform-origin: bottom left;
+}
+
+
+
+
+
+  @media only screen and (max-width: 1600px) {
+    
+    body {
+      background-size: 500%;
+      background-position: right;
+    }
+  }
+
+  
+
+      
+  </style>
+</head>
+<body>
+      <!-- Barra de Navegação -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="../home.html">Página Inicial</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../cadastrarCliente/Cadastrar.html">Cadastrar Cliente</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../atualizar_paciente/index.php">Atualizar Cliente</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../consulta/index.php">Marcar Consulta</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="consultas.php">Ver consultas</a>
+        </li>
+    </ul>
+    </div>
+  </nav>
+
+    <div class="container mt-5">
+        <h2>Cadastro de Consulta</h2>
+        <a href="cadastro.php" class="btn btn-primary">Nova Consulta</a>
+    </div>
+
+    <!-- Rodapé -->
+  <footer class="footer bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Seu Rodapé &copy; 2023</p>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

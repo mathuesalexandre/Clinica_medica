@@ -1,0 +1,49 @@
+CREATE TABLE Paciente (
+    idPaciente INT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    dataNascimento DATE,
+    endereco VARCHAR(255),
+    telefone VARCHAR(20),
+    email VARCHAR(255)
+);
+
+CREATE TABLE Especialidade (
+    idEspecialidade INT PRIMARY KEY,
+    nomeEspecialidade VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Medico (
+    idMedico INT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    login VARCHAR(50) NOT NULL,
+    senha VARCHAR(50) NOT NULL,
+    Especialidade_idEspecialidade INT,
+    FOREIGN KEY (Especialidade_idEspecialidade) REFERENCES Especialidade(idEspecialidade)
+);
+
+CREATE TABLE Consulta (
+    idConsulta INT PRIMARY KEY,
+    dataConsulta DATE,
+    horarioConsulta TIME,
+    Paciente_idPaciente INT,
+    Medico_idMedico INT,
+    Medico_Especialidade_idEspecialidade INT,
+    FOREIGN KEY (Paciente_idPaciente) REFERENCES Paciente(idPaciente),
+    FOREIGN KEY (Medico_idMedico) REFERENCES Medico(idMedico),
+    FOREIGN KEY (Medico_Especialidade_idEspecialidade) REFERENCES Especialidade(idEspecialidade)
+);
+
+CREATE TABLE Atendimento (
+    dataAtendimento DATE,
+    diagnostico TEXT,
+    receita TEXT,
+    Consulta_idConsulta INT,
+    Consulta_Paciente_idPaciente INT,
+    Consulta_Medico_idMedico INT,
+    Consulta_Medico_Especialidade_idEspecialidade INT,
+    PRIMARY KEY (Consulta_idConsulta, Consulta_Paciente_idPaciente, Consulta_Medico_idMedico, Consulta_Medico_Especialidade_idEspecialidade),
+    FOREIGN KEY (Consulta_idConsulta) REFERENCES Consulta(idConsulta),
+    FOREIGN KEY (Consulta_Paciente_idPaciente) REFERENCES Paciente(idPaciente),
+    FOREIGN KEY (Consulta_Medico_idMedico) REFERENCES Medico(idMedico),
+    FOREIGN KEY (Consulta_Medico_Especialidade_idEspecialidade) REFERENCES Especialidade(idEspecialidade)
+);

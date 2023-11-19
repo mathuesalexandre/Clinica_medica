@@ -1,0 +1,91 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+h2 {
+    margin-top: 70px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    top: 100px;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.nav-link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: rgb(10, 13, 13);
+
+    border-radius: 25px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    transition: color 0.3s ease, border-bottom-width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #BB352B;
+    /* Altera a cor do texto ao passar o mouse */
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    /* Altura da barra */
+    background: #BB352B;
+    /* Cor da barra */
+    transform: scaleX(0);
+    /* Inicia com largura zero para não ser visível inicialmente */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    /* Aumenta a largura ao passar o mouse */
+    transform-origin: bottom left;
+}
